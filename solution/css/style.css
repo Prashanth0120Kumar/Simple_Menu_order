@@ -1,0 +1,46 @@
+/* Write style code here*/
+.navbar 
+{
+  background-color: blue;
+  height:80px;
+  box-shadow: 2px 2px 2px orange;
+}
+.navbar h1
+{
+    font-size: 40px;
+    padding: 10px;
+    color:lightblue;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.form {
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.form h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.form .row {
+  margin-bottom: 10px;
+}
+
+.form .col-form-label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form .form-control {
+  width: 100%;
+  height:50px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.addButton
+{
+  margin-left:130px;
+  position: relative;
+  top:-45px;
+  border-radius: 100%;
+}

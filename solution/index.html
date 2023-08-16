@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Form</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <!-- Create order form with various fields as mentioned in README file -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12" >
+                    <nav class="navbar">
+                        <h1>Veggie Pizza Order</h1>
+                      </nav>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <form class="form order-form" style="border:20px solid black;box-shadow: 2px 2px 2px 2px orange; padding:50px;margin:100px;">
+              <h1>Fill up Order Details</h1>
+              <div class="row">
+                <label for="number" class="col-form-label"><h2>Order Id</h2></label>
+                <input type="number" class="form-control" id="orderId" required>
+                <label for="name" class="col-form-label"><h2>User Name</h2></label>
+                <input type="text" class="form-control" id="userName" required>
+                <label for="inputEmail3" class="col-sm-2 col-form-label"><h2>Email</h2></label>
+                <input type="email" class="form-control" id="inputEmail3" required>
+                <label for="number" class="col-form-label"><h2>Contact Number</h2></label>
+                <input type="number" class="form-control" id="contactNo" required>
+                <label for="date" class="col-form-label"><h2>Order Date</h2></label>
+                <input type="date" class="form-control" id="date" required>
+                <label for="address" class="col-form-label"><h2>Address</h2></label>
+                <input type="text" class="form-control" id="address" required>
+              </div>
+              <div id="error-message" style="color: red; margin-top: 10px; display: none;">
+                All fields are required.
+              </div>
+              <h2>Add Order: </h2><button type="button" id="add" class="addButton" disabled><span class="material-symbols-outlined">add</span></button>
+              <div id="orderDetails"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+<script src="./js/script.js"></script>
+<script>
+        function checkFormValidation() {
+            const orderId = document.getElementById('orderId').value;
+            const userName = document.getElementById('userName').value;
+            const email = document.getElementById('inputEmail3').value;
+            const contactNo = document.getElementById('contactNo').value;
+            const date = document.getElementById('date').value;
+            const address = document.getElementById('address').value;
+
+            const addButton = document.getElementById('add');
+            const errorMessage = document.getElementById('error-message');
+
+            if (orderId && userName && email && contactNo && date && address) {
+                addButton.disabled = false;
+                errorMessage.style.display = 'none';
+            } else {
+                addButton.disabled = true;
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        const formInputs = document.querySelectorAll('.form-control');
+        formInputs.forEach(input => {
+            input.addEventListener('input', checkFormValidation);
+        });
+
+        checkFormValidation();
+    </script>
+</body>
+</html>
